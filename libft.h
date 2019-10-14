@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:07:44 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/13 16:19:07 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/14 16:38:36 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 
@@ -46,7 +47,7 @@ int		ft_isdigit(int c);
 char	*ft_substr(char const *s, unsigned start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);

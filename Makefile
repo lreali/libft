@@ -6,7 +6,7 @@
 #    By: ereali <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 18:07:18 by ereali            #+#    #+#              #
-#    Updated: 2019/10/13 19:21:06 by ereali           ###   ########.fr        #
+#    Updated: 2019/10/14 15:47:47 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c \
     ft_strdup.c ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 	ft_split.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c
+	ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c
 	
 CC = gcc
 
