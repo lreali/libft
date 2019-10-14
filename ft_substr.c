@@ -29,3 +29,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s2[i] = '\0';
 	return (s2);
 }
+
+int main()
+{
+	printf("%s\n", ft_substr("", 1, 2));
+	return (0);
+}

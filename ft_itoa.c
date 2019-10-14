@@ -47,8 +47,6 @@ char			*ft_itoa(int n)
 	char	*str;
 	size_t	j;
 
-	if (!(n))
-		return (NULL);
 	j = size_int(n);
 	if (!(str = (char *)malloc(sizeof(char) * (j + 2))))
 		return (NULL);
@@ -64,8 +62,8 @@ char			*ft_itoa(int n)
 	return (str);
 }
 
-/*int main()
+int main()
 {
-	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa(23));
 	return (0);
-}*/
+}

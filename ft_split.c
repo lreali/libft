@@ -69,14 +69,32 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	word = ft_count_word(s, c);
+	if (!(s))
+		return (NULL);
+	if (!(word = ft_count_word(s, c)))
+		return (NULL);
 	if (!(tab = (char **)malloc(sizeof(char *) * (word + 1))))
 		return (NULL);
-	tab[word + 1] = NULL;
+	printf("%d\n", word);
 	while (i < word)
 	{
 		tab[i] = ft_get_next_word(s, c, &j);
 		i++;
 	}
+	tab[word] = NULL;
 	return (tab);
+}
+
+int	main(int argc, char **argv)
+{
+	char	**tab;
+	int	i = 0;
+
+	tab = ft_split(argv[1],argv[2][0]);
+	while (tab[i] != NULL)
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	return (0);
 }
