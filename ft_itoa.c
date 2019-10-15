@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 20:20:36 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/14 18:16:55 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/15 13:42:06 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ char			*ft_itoa(int n)
 	char	*str;
 	size_t	j;
 
-	if (!(n))
-		return (NULL);
 	j = size_int(n);
 	if (!(str = (char *)malloc(sizeof(char) * (j + 2))))
 		return (NULL);
@@ -63,9 +61,3 @@ char			*ft_itoa(int n)
 	str[j + 1] = '\0';
 	return (str);
 }
-
-/*int main()
-{
-	printf("%s\n", ft_itoa(2147483647));
-	return (0);
-}*/

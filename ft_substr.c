@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:10:03 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/13 15:50:56 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/15 17:51:11 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*s2;
 
 	i = 0;
-	if (!(s2 = (char *)malloc((sizeof(char) * len) + 1)))
+	if (!(s))
+		return (NULL);
+	if (!(s2 = (char *)malloc((sizeof(char) * (len + 1)))))
 		return (NULL);
 	while (s[start] && i < len)
 	{
@@ -29,3 +31,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s2[i] = '\0';
 	return (s2);
 }
+
+/*int main ()
+{
+	printf("%s\n",ft_substr("sdfff",0,0));
+	return (0);
+}*/

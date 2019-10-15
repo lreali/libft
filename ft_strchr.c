@@ -6,13 +6,13 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:59:50 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/13 15:38:53 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/15 19:29:45 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 
