@@ -19,6 +19,8 @@ static size_t	ft_count_word(char const *s, char c)
 
 	i = 0;
 	word = 0;
+	if (ft_strlen(s) == 0)
+		return (0);
 	while (s[i] == c)
 		i++;
 	while (s[i])
@@ -28,6 +30,8 @@ static size_t	ft_count_word(char const *s, char c)
 			word++;
 			while (s[i] == c)
 				i++;
+			if (!(s[i]))
+				i--;
 		}
 		i++;
 	}
@@ -84,13 +88,16 @@ char			**ft_split(char const *s, char c)
 	return (tab);
 }
 
-/*int main(int argc,char **argv)
+int main(int argc,char **argv)
 {
+	char	**tab;
 	int i = 0;
-	while (i < ft_count_word(argv[1], argv[2][0]))
+
+	tab = ft_split("\0", argv[2][0]);
+	while (tab[i])
 	{
-	printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
-	i++;
+		printf("%s\n", tab[i]);
+		i++;
 	}
 	return (0);
-}*/
+}
