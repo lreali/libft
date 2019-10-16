@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 19:49:49 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/15 22:44:36 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/16 16:06:50 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,7 @@ char			**ft_split(char const *s, char c)
 	return (tab);
 }
 
-<<<<<<< HEAD
-int main(int argc,char **argv)
+/*int main(int argc,char **argv)
 {
 	int i = 0;
 	while (i < ft_count_word(argv[1], argv[2][0]))
@@ -93,19 +92,5 @@ int main(int argc,char **argv)
 	printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
 	i++;
 	}
-	return(0);
-=======
-int	main(int argc, char **argv)
-{
-	char	**tab;
-	int	i = 0;
-
-	tab = ft_split(argv[1],argv[2][0]);
-	while (tab[i] != NULL)
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
 	return (0);
->>>>>>> 834284708db06480d4e0509b6259a02a9e7b4d23
-}
+}*/

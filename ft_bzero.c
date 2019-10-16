@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 22:40:14 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/14 20:23:19 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/16 16:05:30 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (n > 0)
+	while (i < n)
 	{
-		while (((unsigned char *)s)[i] && i < n)
-		{
-			((unsigned char *)s)[i] = '\0';
-		}
+		((unsigned char *)s)[i] = '\0';
+		i++;
 	}
 }
