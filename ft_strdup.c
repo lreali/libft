@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:02:06 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/12 20:14:36 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/19 16:55:38 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = ft_strlen(s);
-	cpy = (char *)malloc(sizeof(*cpy) * (len + 1));
+	if (!(cpy = (char *)malloc(sizeof(*cpy) * (len + 1))))
+		return (NULL);
 	while (s[i])
 	{
 		cpy[i] = s[i];

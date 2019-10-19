@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 20:20:36 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/15 22:45:14 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/19 17:33:36 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ char			*ft_itoa(int n)
 	char	*str;
 	size_t	j;
 
+	if (n == -2147483648)
+	{
+		str = ft_strdup("-2147483648\0");
+		return (str);
+	}
 	j = size_int(n);
 	if (!(str = (char *)malloc(sizeof(char) * (j + 2))))
 		return (NULL);
-	if (n == -2147483648)
-		return (str = "-2147483648\0");
 	if (n < 0)
 	{
 		str[0] = '-';

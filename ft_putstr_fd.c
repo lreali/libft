@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 18:06:57 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/15 19:16:45 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/19 18:39:16 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	if (*s)
+	if (!(s))
+		return ;
+	while (s[i])
 	{
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
 }

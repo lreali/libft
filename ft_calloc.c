@@ -6,19 +6,18 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 23:59:35 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/12 19:49:34 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/19 16:23:11 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
 	void	*s;
 
-	i = 0;
-	s = (void *)malloc(nmemb * size);
-	ft_memset(s, 0, nmemb * size);
+	if (!(s = (void *)malloc(count * size)))
+		return (NULL);
+	ft_bzero(s, count * size);
 	return (s);
 }

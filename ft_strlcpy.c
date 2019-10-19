@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 17:52:18 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/16 18:44:48 by ereali           ###   ########.fr       */
+/*   Created: 2019/10/19 15:08:05 by ereali            #+#    #+#             */
+/*   Updated: 2019/10/19 15:46:08 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,18 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
+	size_t	res;
 	size_t	i;
 
+	res = ft_strlen(src);
+	if (size == 0)
+		return (res);
 	i = 0;
-	if ((!(dest)) || (!(src)))
-		return (0);
-	/*	if (ft_strlen(src) > size)
-	{
-		while (i < size - 1)
-		{	
-			dest[i] = src[i];
-			i++;
-		}
-	}*/
-	while (src[i] && i < size - 1)
+	while (src[i] && i + 1 < size)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (i);
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 19:49:49 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/16 16:06:50 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/17 15:50:31 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,4 @@ char			**ft_split(char const *s, char c)
 	}
 	tab[word] = NULL;
 	return (tab);
-}
-
-int main(int argc,char **argv)
-{
-	char	**tab;
-	int i = 0;
-
-	tab = ft_split("\0", argv[2][0]);
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	return (0);
 }
