@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 19:10:03 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/16 15:30:38 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/20 20:05:59 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*s2;
 
 	i = 0;
-	if (start > ft_strlen(s))
+	if (start > ft_strlen(s) || s == "")
 		return (s2 = "");
 	if (!(s))
 		return (NULL);

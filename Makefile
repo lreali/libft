@@ -6,7 +6,7 @@
 #    By: ereali <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 18:07:18 by ereali            #+#    #+#              #
-#    Updated: 2019/10/14 15:47:47 by ereali           ###   ########.fr        #
+#    Updated: 2019/10/20 19:50:08 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,17 +20,26 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c \
 	ft_split.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c
 	
+BONUS = ft_lstnew.c
+
 CC = gcc
 
 FLAG = -Wextra -Werror -Wall
 
 OBJS = $(SRC:.c=.o)
 
+OBJSBONUS =
+
 all: $(NAME)
 
 $(NAME):
 	gcc $(FLAG) -c $(SRC)
 	ar -rc $(NAME) $(OBJS)
+	ranlib $(NAME)
+
+bonus: $(NAME)
+	gcc $(FLAG) -c $(BONUS)
+	ar -rc $(NAME) $(OBJS) $(OBJSBONUS)
 	ranlib $(NAME)
 
 clean:

@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   lstnew.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 15:05:23 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/20 17:37:13 by ereali           ###   ########.fr       */
+/*   Created: 2019/10/19 19:32:00 by ereali            #+#    #+#             */
+/*   Updated: 2019/10/20 20:04:07 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	j;
-	size_t	res;
-
-	j = 0;
-	i = ft_strlen(dest);
-	res = ft_strlen(src);
-	if (size <= i)
-		res = size + res;
-	else
-		res = i + res;
-	while (src[j] && i + 1 < size)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	if (i < size)
-		dest[i] = '\0';
-	return (res);
+	t_list *new;
+	
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	if (!(new->content = (void *)malloc(sizeof(t_list))))
+		return (NULL);
+	ft_memmove(new->content, content , sizeof(t_list));
+	new->next = (NULL);
+	return (new);
 }
