@@ -6,7 +6,7 @@
 #    By: ereali <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 18:07:18 by ereali            #+#    #+#              #
-#    Updated: 2019/10/20 19:50:08 by ereali           ###   ########.fr        #
+#    Updated: 2019/10/20 20:31:37 by ereali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ CC = gcc
 
 FLAG = -Wextra -Werror -Wall
 
-OBJS = $(SRC:.c=.o)
+OBJSBONUS = $(BONUS:.c=.o)
 
-OBJSBONUS =
+OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
@@ -43,7 +43,7 @@ bonus: $(NAME)
 	ranlib $(NAME)
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJSBONUS)
 fclean: clean
 	rm -rf $(NAME)
 
