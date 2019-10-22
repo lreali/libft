@@ -6,30 +6,30 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 23:15:59 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/20 15:49:49 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/22 18:27:30 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char			buffer[n];
+	unsigned char	buffer[len];
 	unsigned int	i;
 
 	i = 0;
-	if (!(dest) && n == 0)
+	if ((!(dst) && len == 0) || (!(dst) && !(src)))
 		return (NULL);
-	while (i < n)
+	while (i < len)
 	{
 		buffer[i] = ((const char *)src)[i];
 		i++;
 	}
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		((unsigned char *)dest)[i] = buffer[i];
+		((unsigned char *)dst)[i] = buffer[i];
 		i++;
 	}
-	return (dest);
+	return (dst);
 }

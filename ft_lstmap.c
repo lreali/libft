@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 16:07:17 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/22 18:34:04 by ereali           ###   ########.fr       */
+/*   Created: 2019/10/21 18:02:25 by ereali            #+#    #+#             */
+/*   Updated: 2019/10/22 20:11:34 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*firstelement;
+	t_list	*newlist;
 
-	i = 0;
-	if (!lst)
-		return (0);
+	if (!lst || !(*f))
+		return (NULL);
+	newlist = (*f)(lst);
+	firstelement = newlist;
 	while (lst)
 	{
 		lst = lst->next;
-		i++;
+		if (!(newlist = (*f)(lst)))
+			{
+				(*del)(newlist);
+				free(newlist);
+				return (NULL);
+			}
+		newlist = newlist->next;
 	}
-	return (i);
+	return (firstelement);
 }

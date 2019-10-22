@@ -6,17 +6,17 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:43:32 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/21 17:21:09 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/22 20:21:14 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void	(*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && (*del))
 	{
-		(*del)((void *)lst);
+		del((void *)lst);
 		free((void *)lst);
 	}
 }
