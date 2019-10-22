@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 16:43:32 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/22 20:21:14 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/23 00:39:20 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && (*del))
 	{
-		del((void *)lst);
+		del((void *)lst->content);
 		free((void *)lst);
 	}
 }

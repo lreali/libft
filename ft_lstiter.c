@@ -6,7 +6,7 @@
 /*   By: ereali <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:02:06 by ereali            #+#    #+#             */
-/*   Updated: 2019/10/22 20:21:54 by ereali           ###   ########.fr       */
+/*   Updated: 2019/10/23 00:25:31 by ereali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst && f)
 	{
-		f((void *)lst);
+		f((void *)lst->content);
 		lst = lst->next;
 	}
 }
